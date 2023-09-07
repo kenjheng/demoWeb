@@ -12,8 +12,8 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["DemoWebApplication.csproj", "DemoWebApplication/"]
 RUN dotnet restore "DemoWebApplication/DemoWebApplication.csproj"
-COPY . .
 WORKDIR "/src/DemoWebApplication"
+COPY . .
 RUN dotnet build "DemoWebApplication.csproj" -c Release -o /app/build
 
 FROM build AS publish
