@@ -1,0 +1,32 @@
+﻿@page
+@using DempWebApplication.Pages;
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h2>List of Clients</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Create At</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listClients)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.name</td>
+                <td>@item.email</td>
+                <td>@item.phone</td>
+                <td>@item.address</td>
+                <td>@item.create_at</td>
+            </tr>
+        }
+    </tbody>
+</table>
